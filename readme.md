@@ -61,7 +61,7 @@ sudo systemctl disable nvgetty
 udevadm trigger
 ```
 
-If you want to be able to access UART without sudo, you can also execute this:
+If you want to be able to access UART ports without sudo, you can also execute this:
 ```
 sudo adduser *user* dialout
 sudo chmod 666 /dev/ttyS0
@@ -83,4 +83,6 @@ Save without reboot
 
 Note: In this ISO the SPI driver is loaded automatically on startup. In the official ISO you would also need to start it on every boot with `modprobe spidev`.
 
-And that's it! I took me quite some time to figure all this stuff out, hopefully you'll have an easier time with your Jetson Nano and this ISO Image.
+And that's it! You now have a Jetson Nano that actually works with the communication ports it is advertized to work with. Apart from the changes mentioned in this readme, it should work just like the official version.
+
+I took me quite some time to figure all this stuff out. Hopefully you'll have an easier time with your Jetson Nano than I had.

@@ -94,9 +94,9 @@ tar -xjf kernel_src.tbz2
 Now it's time to change the source code to apply our bugfixes. It's 6 changes in total. You can use nano to edit the text files.
 
 ### Change 1
-Go to: `Linux_for_Tegra/source/public/kernel/kernel-4.9/drivers/gpio/gpio-tegra.c` and apply the diff located here (todo)see in diff folder
-(The diff is partly from [here](https://forums.developer.nvidia.com/t/enabling-spidev-on-the-jetson-nano-is-hanging-when-flashing/73338/59))
-This diff modifies the GPIO driver such that it closes its access to the SPI pins when booting. This is neccessary because some code in the bootloader of the Jetson opens these pins as GPIO and that code cannot be modified from an iso image.
+Go to this file: `Linux_for_Tegra/source/public/kernel/kernel-4.9/drivers/gpio/gpio-tegra.c`. You can optionally make sure it's the same as [this file](gpio-tegra.c_diff\gpio-tegra_ori.c). If it's equal, you can replace it with [this file](gpio-tegra.c_diff\gpio-tegra.c). If you try to compile a different version and it isn't equal, you can generate a diff and apply that.
+(The changes in the diff are partly from [here](https://forums.developer.nvidia.com/t/enabling-spidev-on-the-jetson-nano-is-hanging-when-flashing/73338/59))
+It modifies the GPIO driver such that it closes its access to the SPI pins when booting. This is neccessary because some code in the bootloader of the Jetson opens these pins as GPIO and that code cannot be modified from an iso image.
 
 ### Change 2
 Go to: `Linux_for_Tegra/source/public/hardware/nvidia/platform/t210/porg/kernel-dts/tegra210-porg-p3448-common.dtsi`
