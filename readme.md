@@ -4,11 +4,10 @@ This repository contains an unofficial ISO image for the Jetson Nano (2GB and 4G
  -  Working SPI ports. Due to a bug in the official image, the SPI ports cannot be used because the GPIO driver accesses them. (There are no working workarounds that don't involve flashing the Jetson Nano from a Linux machine).
  - More robust I2C ports. The official release can lock the kernel randomly for up for 10 seconds when using I2C.
 
-All of these changes required me to build a custom Linux kernel and rebuild the ISO files. To save you the hassle I publish the modified ISO here. This ISO is also used in the [Milana robot](https://github.com/helmutbuhler/milana_robot) project, but the issues it fixes are completely independent of it and you can use it for anything you like.
+All of these changes required me to build a custom Linux kernel and rebuild the ISO files. To save you the hassle I publish the modified ISO here. This ISO is also used in the [Milana Robot](https://github.com/helmutbuhler/milana_robot) project, but the issues it fixes are completely independent of it and you can use it for anything you like.
 
 ## Links to the ISOs
-Here you can download the ISOs. See [here](build.md) if you want to build the ISO yourself. 
-todo
+You can download the ISOs [here](https://huggingface.co/datasets/MilanaRobot/jetson_nano_image_milana_iso/tree/main). See [here](build.md) if you want to build the ISO yourself. 
 
 ## Usage
 ### Flash ISO file
@@ -67,7 +66,7 @@ sudo adduser *user* dialout
 sudo chmod 666 /dev/ttyS0
 sudo chmod 666 /dev/ttyTHS1
 ```
-(Replace *user* with your username)
+(Replace \*user\* with your username)
 
 ### Init SPI Pins:
 If you want to access SPI, do this: (This is the same as in this [tutorial](https://jetsonhacks.com/2020/05/04/spi-on-jetson-using-jetson-io/))
